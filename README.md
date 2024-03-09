@@ -63,7 +63,7 @@ For example, in the following case, the color `xxx` was picked from the image `x
 ### Output Image:
 ![Output Image](outputs/similar_colors_highlighted.jpg)
 
-Explanation: The output image highlights areas within the input image that closely match the color `[12, 17, 18]`, with a threshold of 20.
+Explanation: The output image highlights areas within the input image that closely match the color `[12, 17, 18]` (black lines in the objects), with a threshold of 20.
 
 
 
