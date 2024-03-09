@@ -20,6 +20,9 @@
 
 ###  Quantitative Comparison:
 
+- NTSC Method: Mean = 140.1889200846354, Standard Deviation = 66.67641647138772
+- Averaging Method: Mean = 137.16956217447915, Standard Deviation = 65.0926175487364
+
 ![Input Image](outputs/grayscale_methods_comparison.png)
 
 
