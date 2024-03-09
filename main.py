@@ -46,13 +46,20 @@ def find_similar_colors_in_image(image, picked_color, threshold=50):
     
     return result_image
 
+# Function to save the output image
+def save_output_image(output_image, output_path):
+    cv2.imwrite(output_path, output_image)
+    print(f"Output image saved as: {output_path}")
+
 # Main function to run the color picker and highlighter
-def main(image_path, threshold):
+def main(image_path, threshold, output_path):
     global picked_color
     # Pick a color from the image
     pick_color_from_image(image_path)
     # Find and highlight similar colors in the image
     similar_colors_image = find_similar_colors_in_image(image, picked_color, threshold)
+    # Save the output image
+    save_output_image(similar_colors_image, output_path)
     # Display the result
     cv2.imshow("Similar Colors Highlighted", similar_colors_image)
     # Wait for a key press before closing
@@ -67,9 +74,11 @@ if __name__ == "__main__":
     parser.add_argument('image_path', type=str, help='Path to the input image file')
     # Add argument for color similarity threshold (optional, with default value)
     parser.add_argument('--threshold', type=int, default=50, help='Threshold for color similarity. Default is 50.')
+    # Add argument for output image path (optional)
+    parser.add_argument('--output_path', type=str, default='output_image.jpg', help='Path to save the output image. Default is "output_image.jpg".')
     # Parse arguments
     args = parser.parse_args()
 
     picked_color = []
     # Execute the main function with provided arguments
-    main(args.image_path, args.threshold)
+    main(args.image_path, args.threshold, args.output_path)
