@@ -1,4 +1,4 @@
-# Image Grayscale Conversion and Display Tool
+# Image Grayscale Conversion
 
 `digital_images.ipynb` script provides functionalities to convert color images to grayscale using two different methods and display them side by side for comparison. It utilizes the Python Imaging Library (PIL) and NumPy to process images, employing the NTSC method for perceptually weighted grayscale conversion and a simple average method for a straightforward grayscale conversion.
 
