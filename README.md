@@ -1,22 +1,50 @@
 # Image Grayscale Conversion and Display Tool
 
-digital_images.ipynb script provides functionalities to convert color images to grayscale using two different methods and display them side by side for comparison. It utilizes the Python Imaging Library (PIL) and NumPy to process images, employing the NTSC method for perceptually weighted grayscale conversion and a simple average method for a straightforward grayscale conversion.
+`digital_images.ipynb` script provides functionalities to convert color images to grayscale using two different methods and display them side by side for comparison. It utilizes the Python Imaging Library (PIL) and NumPy to process images, employing the NTSC method for perceptually weighted grayscale conversion and a simple average method for a straightforward grayscale conversion.
 
 ## Features
 
 - **NTSC Grayscale Conversion**: Converts color images to grayscale based on the NTSC (National Television System Committee) standard. This method applies a weighted sum of the RGB values to better reflect human perception. The grayscale value is calculated as follows:
 
-  ```plaintext
+  ```
   gray = 0.299 * R + 0.587 * G + 0.114 * B
+  ```
+![Input Image](outputs/matryoshka_grayscale_NTSC.jpg)
+
+  
 
 - **Average Grayscale Conversion**: Converts color images to grayscale by averaging the RGB values.
 
-## Installation
+![Input Image](outputs/matryoshka_grayscale_average.jpg)
 
-To use this script, you will need Python installed on your system along with the PIL (Pillow) and NumPy packages. If you haven't installed these packages yet, you can install them using pip:
 
-```bash
-pip install Pillow numpy
+###  Quantitative Comparison:
+
+![Input Image](outputs/grayscale_methods_comparison.png)
+
+
+### Qualitative Comparison:
+
+- **NTSC Method**: This method applies different weights to the RGB components based on human perception sensitivity. Humans are more sensitive to green light, so the green component has a higher weight. The resulting grayscale image often appears more balanced and true to the perceived brightness of the original color image.
+
+- **Averaging Method (Equal Weights)**: By giving each RGB component the same weight (1/3 each), this method treats all colors equally. This approach might not always align with human visual perception, potentially leading to a grayscale image that feels less dynamically balanced compared to the NTSC method.
+
+
+# Color Quantization Algorithms
+
+### Color Quantization Algorithms on the Images:
+
+#### Used Algorithms: K-means, Uniform Quantization
+
+- **K-means Quantization**: This algorithm partitions the image's color space into \(K\) clusters, where \(K\) is a predefined number of colors to be used in the quantized image. It iteratively refines the position of centroids (the average of the colors in a cluster) and reassigns pixels to the closest centroid, minimizing the distance between pixels and centroids. This method is effective for reducing the number of colors while maintaining the perceptual quality of the image.
+
+- **Uniform Quantization**: Unlike K-means, Uniform Quantization simplifies the color space by uniformly dividing it into bins across each color dimension (RGB). Each color in the original image is then mapped to the closest color in this simplified palette. This method is computationally less intensive but might not preserve the image's visual quality as effectively as K-means, especially with a low number of colors.
+
+`digital_images.ipynb` file describes the details of implementation
+
+#### Outputs
+
+![Input Image](outputs/color_quantization_algorithms.png)
 
 
 
