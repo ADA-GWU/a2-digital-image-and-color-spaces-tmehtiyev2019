@@ -1,3 +1,25 @@
+# Image Grayscale Conversion and Display Tool
+
+digital_images.ipynb script provides functionalities to convert color images to grayscale using two different methods and display them side by side for comparison. It utilizes the Python Imaging Library (PIL) and NumPy to process images, employing the NTSC method for perceptually weighted grayscale conversion and a simple average method for a straightforward grayscale conversion.
+
+## Features
+
+- **NTSC Grayscale Conversion**: Converts color images to grayscale based on the NTSC (National Television System Committee) standard. This method applies a weighted sum of the RGB values to better reflect human perception. The grayscale value is calculated as follows:
+
+  ```plaintext
+  gray = 0.299 * R + 0.587 * G + 0.114 * B
+
+- **Average Grayscale Conversion**: Converts color images to grayscale by averaging the RGB values.
+
+## Installation
+
+To use this script, you will need Python installed on your system along with the PIL (Pillow) and NumPy packages. If you haven't installed these packages yet, you can install them using pip:
+
+```bash
+pip install Pillow numpy
+
+
+
 # Color Picker and Highlighter Documentation
 
 This project encompasses a Python script designed to facilitate the selection of a specific color from a given image, and to subsequently highlight regions within that image which closely match the chosen color, adjustable by a user-defined threshold. This document aims to delineate the procedure required to effectively operate the script.
