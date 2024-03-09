@@ -40,13 +40,42 @@
 
 - **Uniform Quantization**: Unlike K-means, Uniform Quantization simplifies the color space by uniformly dividing it into bins across each color dimension (RGB). Each color in the original image is then mapped to the closest color in this simplified palette. This method is computationally less intensive but might not preserve the image's visual quality as effectively as K-means, especially with a low number of colors.
 
-`digital_images.ipynb` file describes the details of implementation
+`digital_images.ipynb` file describes the details of implementation.
 
 #### Outputs
 
 ![Input Image](outputs/color_quantization_algorithms.png)
 
+![Input Image](outputs/color_quantization_algorithms_uniform.png)
 
+
+# Comparison of Hue, Saturation, Brightness, and Lightness Adjustments
+
+## Hue
+
+- **Definition**: Hue represents the color itself, the aspect of color which is described by names like red, green, blue, etc.
+- **Impact**: Adjusting the hue changes the base color (or wavelength) of the image pixels without altering the brightness or saturation. This can shift the entire color spectrum of the image, leading to a visually different color appearance.
+
+## Saturation
+
+- **Definition**: Saturation measures the intensity or purity of a color. It represents how far a color is from a gray of the same brightness, ranging from fully saturated (pure color) to completely desaturated (gray).
+- **Impact**: Adjusting saturation enhances or dulls the colors in an image. Increasing saturation will make colors more vivid, whereas decreasing it will make them closer to gray.
+
+## Brightness
+
+- **Definition**: Brightness refers to the perception of how intense light is. In color models like HSV/HSB, it represents the intensity of the light that a color reflects or emits.
+- **Impact**: Brightness adjustments make the image appear lighter or darker. It affects all pixels and can change the overall impression of illumination within the image, without changing the color (hue) or purity (saturation).
+
+## Lightness
+
+- **Definition**: Lightness, in color science, is a measure of the perceived brightness of a color relative to a similarly illuminated white. It's a concept used in HSL and Lab color models to represent a midpoint between the darkest and lightest extremes of color.
+- **Impact**: Adjusting lightness affects the perceived illumination of the color, making it appear closer to white or black. This adjustment is designed to maintain the color's hue and saturation while altering how light or dark the color appears.
+
+
+For further details on the implementation of hue, saturation, brightness, and lightness adjustments, please refer to the  `digital_images.ipynb` file.
+
+
+![Input Image](outputs/hue_saturation_brightness_lightness_applied.png)
 
 # Color Picker and Highlighter Documentation
 
