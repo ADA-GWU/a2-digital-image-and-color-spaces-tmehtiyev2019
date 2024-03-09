@@ -10,8 +10,6 @@ Before running the script, ensure you have Python installed on your system along
 pip install -r requirements.txt
 ```
 
-
-
 ## Installation
 
 ### Clone the Repository
@@ -55,7 +53,18 @@ python main.py photos/matryoshka.jpeg --threshold 50
 
 ## Usage Example
 
-Upon executing the script with the command specified above, a window will be displayed showcasing the chosen image. Clicking any region of the image will select a color, post which, the script will highlight areas within the image that are of a color similar to the one selected.
+After running the script with the specified command, a window will display the chosen image. Click on any part of the image to pick a color. The script will then highlight areas within the image that are of a similar color to the one picked.
+
+For example, in the following case, the color `xxx` was picked from the image `x.jpeg` with a threshold of 30. The input image and its corresponding output are shown below:
+
+### Input Image:
+![Input Image](photos/matryoshka.jpeg)
+
+### Output Image:
+![Output Image](outputs/similar_colors_highlighted.png)
+
+Explanation: The output image highlights areas within the input image that closely match the color `[5, 8, 6]`, with a threshold of 30.
+
 
 
 
